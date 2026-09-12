@@ -1,0 +1,13 @@
+dataset,type,rows,start_date,end_date,invalid_dates,duplicate_rows,duplicate_symbol_dates,missing_cells,bad_ohlc_rows,non_positive_price_rows,non_positive_volume,extreme_returns_over_20pct,output_file
+BAJFINANCE,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,1,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\BAJFINANCE_clean.csv
+HDFCBANK,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,1,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\HDFCBANK_clean.csv
+ICICIBANK,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\ICICIBANK_clean.csv
+INFY,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\INFY_clean.csv
+ITC,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\ITC_clean.csv
+LT,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\LT_clean.csv
+RELIANCE,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,1,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\RELIANCE_clean.csv
+SBIN,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\SBIN_clean.csv
+TCS,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\TCS_clean.csv
+TITAN,stock,1242,2021-09-13,2026-09-11,0,0,0,1,0,0,0.0,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks\TITAN_clean.csv
+NIFTY 50,benchmark,248,2025-09-12,2026-09-11,0,0,0,1,0,0,,0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\nifty50\nifty50_clean.csv
+India VIX,risk_indicator,248,2025-09-12,2026-09-11,0,0,0,1,0,0,,5,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\india_vix\india_vix_clean.csv
