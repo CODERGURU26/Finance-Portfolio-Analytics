@@ -1,0 +1,11 @@
+symbol,rows,corporate_actions,raw_extreme_returns,adjusted_extreme_returns,invalid_adjusted_prices,min_adjustment_factor,max_adjustment_factor,output_file
+BAJFINANCE,1242,1,1,0,0,1.0,10.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\BAJFINANCE_adjusted.csv
+HDFCBANK,1242,1,1,0,0,1.0,2.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\HDFCBANK_adjusted.csv
+ICICIBANK,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\ICICIBANK_adjusted.csv
+INFY,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\INFY_adjusted.csv
+ITC,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\ITC_adjusted.csv
+LT,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\LT_adjusted.csv
+RELIANCE,1242,1,1,0,0,1.0,2.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\RELIANCE_adjusted.csv
+SBIN,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\SBIN_adjusted.csv
+TCS,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\TCS_adjusted.csv
+TITAN,1242,0,0,0,0,1.0,1.0,C:\Users\guruu\OneDrive\Desktop\Finance Portfolio Analytics Project\data\processed\stocks_adjusted\TITAN_adjusted.csv

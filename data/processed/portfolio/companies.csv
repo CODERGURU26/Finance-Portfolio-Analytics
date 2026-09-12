@@ -1,0 +1,11 @@
+company_id,symbol,company_name,sector,industry
+1,RELIANCE,Reliance Industries Ltd,Energy,Oil Gas & Petrochemicals
+2,HDFCBANK,HDFC Bank Ltd,Banking,Private Bank
+3,ICICIBANK,ICICI Bank Ltd,Banking,Private Bank
+4,SBIN,State Bank of India,Banking,Public Bank
+5,TCS,Tata Consultancy Services Ltd,IT,IT Services
+6,INFY,Infosys Ltd,IT,IT Services
+7,ITC,ITC Ltd,FMCG,Consumer Goods
+8,LT,Larsen & Toubro Ltd,Industrials,Engineering & Construction
+9,TITAN,Titan Company Ltd,Consumer,Lifestyle Products
+10,BAJFINANCE,Bajaj Finance Ltd,Financial Services,NBFC
