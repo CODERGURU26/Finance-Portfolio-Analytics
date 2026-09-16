@@ -619,3 +619,37 @@ SELECT
     ) AS drawdown_pct
 FROM vw_portfolio_daily
 ORDER BY trade_date;
+
+-- ============================================================
+-- View 18: Market Volatility
+-- ============================================================
+
+CREATE OR REPLACE VIEW vw_market_volatility AS
+SELECT
+    trade_date,
+    close_value,
+    daily_return,
+    pct_change
+FROM market_volatility
+ORDER BY trade_date;
+
+SELECT *
+FROM vw_market_volatility
+LIMIT 5;
+
+-- ============================================================
+-- View 19: Portfolio VIX Correlation
+-- ============================================================
+
+CREATE OR REPLACE VIEW vw_portfolio_vix_correlation AS
+SELECT
+    CORR(
+        p.daily_return_pct,
+        v.daily_return
+    ) AS portfolio_vix_correlation
+FROM vw_portfolio_daily p
+JOIN market_volatility v
+    ON p.trade_date = v.trade_date;
+
+SELECT * 
+FROM vw_portfolio_vix_correlation;
