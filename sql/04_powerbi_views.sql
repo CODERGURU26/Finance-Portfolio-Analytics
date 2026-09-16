@@ -1,3 +1,4 @@
+
 -- ============================================================
 -- View 1: Daily Portfolio Performance
 -- ============================================================
@@ -255,19 +256,27 @@ SELECT
     c.company_name,
     c.sector,
     ph.invested_amount,
+
     ROUND(
         (
             ph.invested_amount
             / SUM(ph.invested_amount) OVER ()
         ) * 100,
         2
-    ) AS actual_weight_pct
+    ) AS actual_weight_pct,
+
+    ROUND(
+        ph.portfolio_weight * 100,
+        2
+    ) AS target_weight_pct
+
 FROM portfolio_holdings ph
 JOIN companies c
     ON ph.company_id = c.company_id
+
 ORDER BY actual_weight_pct DESC;
 
-SELECT *
+SELECT * 
 FROM vw_portfolio_weights;
 
 -- ============================================================
@@ -519,3 +528,94 @@ LIMIT 10;
 
 SELECT *
 FROM vw_unusual_price_movements;
+
+-- ============================================================
+-- View 15: Portfolio V/S nifty daily
+-- ============================================================
+
+
+CREATE OR REPLACE VIEW vw_portfolio_vs_nifty_daily AS
+WITH nifty AS (
+    SELECT
+        trade_date,
+        close_price,
+        ((close_price / FIRST_VALUE(close_price)
+            OVER (ORDER BY trade_date)) - 1) * 100
+            AS cumulative_return_pct,
+        (
+            close_price
+            / LAG(close_price) OVER (ORDER BY trade_date)
+            - 1
+        ) * 100 AS daily_return_pct
+    FROM benchmarks
+    WHERE index_name = 'NIFTY 50'
+),
+portfolio AS (
+    SELECT
+        trade_date,
+        portfolio_value,
+        cumulative_return_pct
+    FROM vw_portfolio_daily
+)
+SELECT
+    p.trade_date,
+    p.cumulative_return_pct AS portfolio_cumulative_return_pct,
+    n.cumulative_return_pct AS nifty_cumulative_return_pct,
+    n.daily_return_pct AS nifty_daily_return_pct
+FROM portfolio p
+JOIN nifty n
+    ON p.trade_date = n.trade_date
+ORDER BY p.trade_date;
+
+
+SELECT *
+FROM vw_portfolio_vs_nifty_daily
+LIMIT 5;
+-- ============================================================
+-- View 16: Risk Contribution
+-- ============================================================
+CREATE OR REPLACE VIEW vw_risk_contribution AS
+WITH stock_volatility AS (
+    SELECT
+        c.symbol,
+        ph.portfolio_weight,
+        STDDEV_POP(p.daily_return) AS daily_volatility
+    FROM prices p
+    JOIN companies c
+        ON p.company_id = c.company_id
+    JOIN portfolio_holdings ph
+        ON p.company_id = ph.company_id
+    WHERE p.trade_date BETWEEN '2025-09-12' AND '2026-09-11'
+    GROUP BY
+        c.symbol,
+        ph.portfolio_weight
+)
+SELECT
+    symbol,
+    ROUND(portfolio_weight * 100, 2) AS actual_weight_pct,
+    ROUND(daily_volatility * 100, 2) AS daily_volatility_pct,
+    ROUND(portfolio_weight * daily_volatility * 100, 2)
+        AS risk_contribution_pct
+FROM stock_volatility
+ORDER BY risk_contribution_pct DESC;
+
+
+-- ============================================================
+-- View 17: Portfolio Drawdown
+-- ============================================================
+CREATE OR REPLACE VIEW vw_portfolio_drawdown AS
+SELECT
+    trade_date,
+    portfolio_value,
+    ROUND(
+        (
+            portfolio_value
+            / MAX(portfolio_value) OVER (
+                ORDER BY trade_date
+                ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+            ) - 1
+        ) * 100,
+        2
+    ) AS drawdown_pct
+FROM vw_portfolio_daily
+ORDER BY trade_date;
