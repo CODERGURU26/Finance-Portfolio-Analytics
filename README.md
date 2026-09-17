@@ -23,6 +23,23 @@ This project simulates the work of a Data Analyst at an investment or wealth-man
 
 ---
 
+## Dashboard Preview
+
+<table>
+<tr>
+<td><img src="./powerbi/Portfolio_Analysis.png" alt="Portfolio Overview" width="400"/></td>
+<td><img src="./powerbi/Risk_Analysis.png" alt="Risk Analysis" width="400"/></td>
+</tr>
+<tr>
+<td><img src="./powerbi/Portfolio_Composition.png" alt="Portfolio Composition" width="400"/></td>
+<td><img src="./powerbi/Market_Analysis.png" alt="Market Analysis" width="400"/></td>
+</tr>
+</table>
+
+*Full breakdown of each page in the [Power BI Dashboard](#power-bi-dashboard) section below.*
+
+---
+
 ## Business Objective
 
 The project answers practical investment-analytics questions such as:
@@ -296,22 +313,22 @@ The final Power BI report contains four pages, built on top of the PostgreSQL an
 ### Page 1 — Portfolio Overview
 Portfolio value, return, NIFTY 50 comparison, excess return, daily/cumulative/monthly performance, stock performance, and stock/sector contribution.
 
-![Portfolio Overview](./screenshots/Portfolio_Analysis.png)
+![Portfolio Overview](./powerbi/Portfolio_Analysis.png)
 
 ### Page 2 — Risk Analysis
 Annualized volatility, maximum drawdown, 95% one-day VaR, Sharpe ratio, daily volatility, stock risk contribution, stock beta, and portfolio drawdown trend.
 
-![Risk Analysis](./screenshots/Risk_Analysis.png)
+![Risk Analysis](./powerbi/Risk_Analysis.png)
 
 ### Page 3 — Portfolio Composition
 Number of holdings/sectors, largest stock/sector weight, portfolio HHI, actual stock weights, sector allocation, target vs. actual weights, and sector contribution.
 
-![Portfolio Composition](./screenshots/Portfolio_Composition.png)
+![Portfolio Composition](./powerbi/Portfolio_Composition.png)
 
 ### Page 4 — Market Analysis
 NIFTY 50 return and volatility, average/peak India VIX, portfolio–VIX correlation, NIFTY 50 cumulative return trend, India VIX trend, stock beta, highest-volume trading days, and unusual price movements.
 
-![Market Analysis](./screenshots/Market_Analysis.png)
+![Market Analysis](./powerbi/Market_Analysis.png)
 
 ---
 
